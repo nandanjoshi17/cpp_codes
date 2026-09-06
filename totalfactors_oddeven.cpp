@@ -2,25 +2,27 @@
 using namespace std;
 int main()
 {
-    int i,n,codd=0,ceven=0;
+    int i,n,codd=0,ceven=0,count=0;
     cout<<"Enter Number : ";
     cin>>n;
-    cout<<"total odd factors of "<<n<<" are : ";
     for(i = 1;i<=n;i++)
     {
-        if(i%n == 0 && i%2 != 0)
-    {
-        codd++;
-    } 
-     cout<<codd;
+        if(n%i == 0)
+         {
+            if(i%2 == 0)
+            {
+                ceven++;
+               
+            }
+           
+            count++;
+            
+         }
     }
-    cout<<"\nTotal even factors of "<<n<<" are : ";
-    for(i = 1;i<=n;i++)
-    {
-        if(i%n == 0 && i%2 == 0)
-    {
-        ceven++;
-    } 
-     cout<<ceven;
-    }
+    int odd = count - ceven;
+    cout<<"Total factors of "<<n<<" are : "<<count;
+     cout<<"\nOdd factors of "<<n<< " are  : "<<odd;
+     cout<<"\nTotal even factors of "<<n<<" are : "<<ceven;
+    
+    return 0;
 }
